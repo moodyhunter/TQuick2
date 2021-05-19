@@ -1,0 +1,13 @@
+<RCC>
+    <qresource prefix="/TQuick">
+        <file>resource/font/fontawesome-webfont.ttf</file>
+        <file>resource/font/mask.cso</file>
+        <file>resource/font/svg.cso</file>
+        <file>resource/svg/close-px.svg</file>
+        <file>resource/svg/close.svg</file>
+        <file>resource/svg/error.svg</file>
+        <file>resource/svg/info.svg</file>
+        <file>resource/svg/success.svg</file>
+        <file>resource/svg/warning.svg</file>
+    </qresource>
+</RCC>
