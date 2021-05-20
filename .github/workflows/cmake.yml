@@ -1,0 +1,38 @@
+name: CMake
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+env:
+  # Customize the CMake build type here (Release, Debug, RelWithDebInfo, etc.)
+  BUILD_TYPE: Release
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - uses: ilammy/msvc-dev-cmd@v1
+      with:
+        toolset: 14.2
+        arch: x64
+    - id: cache
+      uses: actions/cache@v1
+      with:
+        path: ../Qt
+        key: cache_key
+    - uses: jurplel/install-qt-action@v2
+      with:
+        version: 6.1.0
+        arch: win64_msvc2019_64
+        cached: ${{steps.cache.outputs.cache-hit}}
+    - name: Configure CMake
+      run: cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
+
+    - name: Build
+      # Build your program with the given configuration
+      run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
