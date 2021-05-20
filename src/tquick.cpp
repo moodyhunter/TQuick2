@@ -93,7 +93,7 @@ TQuick *TQuick::getInstance()
 
 QString TQuick::version() const
 {
-    return QString("%1.%2").arg(TQUICK_LIB_VERSION_MAJOR).arg(TQUICK_LIB_VERSION_MINOR);
+    return TQUICK_COMPAT_VERSION;
 }
 
 QString TQuick::awesomeFromKey(const QString &strKey)

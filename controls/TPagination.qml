@@ -16,7 +16,7 @@ Item {
     property alias itemBackground: mItemGadgetBackground
     property alias itemActiveBg: mItemActiveGadgetBackground
     property alias itemBorder: mItemGadgetBorder
-    property alias itemActiveBorder:mItemActiveGadgetBorder
+    property alias itemActiveBorder: mItemActiveGadgetBorder
     property alias theme: tPaginationTheme
 
     property Component contentComponent
@@ -122,5 +122,4 @@ Item {
 
         Component.onCompleted: initialize()
     }
-
 }
