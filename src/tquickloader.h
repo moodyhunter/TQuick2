@@ -32,7 +32,7 @@
 
 #include <QQmlEngine>
 
-class TQuickLoader
+class __declspec(dllexport) TQuickLoader
 {
   public:
     static void load(QQmlEngine *pEngine);

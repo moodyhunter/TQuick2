@@ -1,5 +1,5 @@
 <RCC>
-    <qresource prefix="/TQuick">
+    <qresource prefix="/TQuick2">
         <file>resource/font/fontawesome-webfont.ttf</file>
         <file>resource/font/mask.cso</file>
         <file>resource/font/svg.cso</file>

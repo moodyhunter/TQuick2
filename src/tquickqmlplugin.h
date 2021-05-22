@@ -39,9 +39,8 @@ class TQuickQmlPlugin : public QQmlExtensionPlugin
 
   public:
     // QQmlExtensionInterface interface
-    void registerTypes(const char *pUri);
-
-    void initializeEngine(QQmlEngine *pEngine, const char *pUri);
+    void registerTypes(const char *pUri) override;
+    void initializeEngine(QQmlEngine *pEngine, const char *pUri) override;
 };
 
 #endif // TQUICKQMLPLUGIN_H

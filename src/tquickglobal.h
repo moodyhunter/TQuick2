@@ -43,7 +43,7 @@ namespace TQuick_State
         Pressed = 0x2,
         Checked = 0x3
     };
-    Q_ENUM_NS(TQuickStateType);
+    Q_ENUMS(TQuickStateType);
 } // namespace TQuick_State
 
 // qml type TPositionType.
@@ -59,7 +59,7 @@ namespace TQuick_Position
         Center,
         Only,
     };
-    Q_ENUM_NS(TQuickPositionType);
+    Q_ENUMS(TQuickPositionType);
 } // namespace TQuick_Position
 
 // qml type TIconType.
@@ -71,7 +71,7 @@ namespace TQuick_Icon
         Awesome,
         SVG,
     };
-    Q_ENUM_NS(TQuickIconType);
+    Q_ENUMS(TQuickIconType);
 } // namespace TQuick_Icon
 
 // qml type TTimePreset.
@@ -93,7 +93,7 @@ namespace TQuick_Time
         ShortTime2s = T2s,
         LongTime4s = T4s,
     };
-    Q_ENUM_NS(TQuickTimePreset);
+    Q_ENUMS(TQuickTimePreset);
 } // namespace TQuick_Time
 
 // h1=32px h2=24px h3=19px h4=16px h5=14px h6=12px
@@ -112,7 +112,7 @@ namespace TQuick_PixelSize
         PH7 = 10,
         PH8 = 8
     };
-    Q_ENUM_NS(TQuickPixelSizePreset);
+    Q_ENUMS(TQuickPixelSizePreset);
 } // namespace TQuick_PixelSize
 
 // qml type TAwesomeType.
@@ -909,7 +909,7 @@ namespace TQuick_Awesome
         FA_wpexplorer = 0xf2de,
         FA_meetup = 0xf2e0
     };
-    Q_ENUM_NS(TQuick_Awesome::TQuickAwesomeType)
+    Q_ENUMS(TQuickAwesomeType)
 } // namespace TQuick_Awesome
 
 #endif // TQUICKGLOBAL_H
