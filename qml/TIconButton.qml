@@ -1,4 +1,4 @@
-import QtQuick 2.6
+import QtQuick
 import TQuick2
 
 TButton {
@@ -18,9 +18,10 @@ TButton {
     contentComponent: {
         if (mGadgetIcon.position === TPosition.Only) {
             return contentOnlyiconItem
-        } else if(mGadgetIcon.position === TPosition.Left || icon.position === TPosition.Reght) {
+        } else if (mGadgetIcon.position === TPosition.Left
+                   || icon.position === TPosition.Reght) {
             return contentRowLayoutItem
-        } else if(mGadgetIcon.position === TPosition.Top) {
+        } else if (mGadgetIcon.position === TPosition.Top) {
             return contentColumnLayoutItem
         }
         return null
@@ -29,7 +30,8 @@ TButton {
     iconComponent: {
         if (!mGadgetIcon.source) {
             return null
-        } else if(mGadgetIcon.type === TIconType.SVG || mGadgetIcon.source.indexOf(".svg") != -1) {
+        } else if (mGadgetIcon.type === TIconType.SVG
+                   || mGadgetIcon.source.indexOf(".svg") != -1) {
             return svgComponent
         }
         return awesomeiconComponent
@@ -58,7 +60,8 @@ TButton {
             id: row
             spacing: tIconButton.spacing
             scale: tIconButton.theme.scale
-            layoutDirection: tIconButton.icon.position === TPosition.Left ? Qt.LeftToRight : Qt.RightToLeft
+            layoutDirection: tIconButton.icon.position
+                             === TPosition.Left ? Qt.LeftToRight : Qt.RightToLeft
 
             Loader {
                 id: icon
@@ -118,8 +121,8 @@ TButton {
             theme.parent: tIconButton.theme
 
             source: mGadgetIcon.source
-            color:  mGadgetIcon.color
-            width:  mGadgetIcon.width
+            color: mGadgetIcon.color
+            width: mGadgetIcon.width
             height: mGadgetIcon.height
         }
     }

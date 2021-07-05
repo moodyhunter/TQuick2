@@ -1,7 +1,7 @@
-import QtQuick 2.6
+import QtQuick
 import TQuick2
 
-TMouseArea{
+TMouseArea {
     id: tImageButton
 
     property string source
@@ -45,5 +45,4 @@ TMouseArea{
 
         Component.onCompleted: initialize()
     }
-
 }

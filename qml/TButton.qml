@@ -1,15 +1,16 @@
-import QtQuick 2.6
+import QtQuick
 import TQuick2
 
-TMouseArea{
+TMouseArea {
     id: tButton
     width: contentComponentLoader.width + tButton.padding
     height: contentComponentLoader.height + tButton.padding
-    states: TThemeManager.currentThemeValid || !theme.enabled ? defaultState : null
+    states: TThemeManager.currentThemeValid
+            || !theme.enabled ? defaultState : null
 
     property int padding: 20
     property int contentHAlign: Qt.AlignHCenter //Qt.AlignHCenter 、 Qt.AlignLeft or Qt.AlignRight
-    property list<State> defaultState :[
+    property list<State> defaultState: [
         State {
             name: statetoString(TStateType.Pressed)
             PropertyChanges {

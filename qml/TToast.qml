@@ -1,6 +1,8 @@
 pragma Singleton
-import QtQuick 2.6
+
+import QtQuick
 import TQuick2
+
 
 /*!
     TToast.showSuccess(text,duration,moremsg)
@@ -10,31 +12,34 @@ import TQuick2
     TToast.showCustom(itemcomponent,duration)
 
 */
-
 TObject {
     id: tToast
 
     property int layoutY: 75
 
     /*! duration = TTimePreset */
-    function showSuccess(text,duration,moremsg) {
-        mControl.create(mControl.const_success,text,duration,moremsg ? moremsg : "")
+    function showSuccess(text, duration, moremsg) {
+        mControl.create(mControl.const_success, text, duration,
+                        moremsg ? moremsg : "")
     }
 
-    function showInfo(text,duration,moremsg) {
-        mControl.create(mControl.const_info,text,duration,moremsg ? moremsg : "")
+    function showInfo(text, duration, moremsg) {
+        mControl.create(mControl.const_info, text, duration,
+                        moremsg ? moremsg : "")
     }
 
-    function showWarning(text,duration,moremsg) {
-        mControl.create(mControl.const_warning,text,duration,moremsg ? moremsg : "")
+    function showWarning(text, duration, moremsg) {
+        mControl.create(mControl.const_warning, text, duration,
+                        moremsg ? moremsg : "")
     }
 
-    function showError(text,duration,moremsg) {
-        mControl.create(mControl.const_error,text,duration,moremsg ? moremsg : "")
+    function showError(text, duration, moremsg) {
+        mControl.create(mControl.const_error, text, duration,
+                        moremsg ? moremsg : "")
     }
 
-    function showCustom(itemcomponent,duration) {
-        mControl.createCustom(itemcomponent,duration)
+    function showCustom(itemcomponent, duration) {
+        mControl.createCustom(itemcomponent, duration)
     }
 
     TObject {
@@ -49,9 +54,10 @@ TObject {
         property int maxWidth: 300
 
         function create(type, text, duration, moremsg) {
-            if(screenLayout) {
+            if (screenLayout) {
                 var last = screenLayout.getLastloader()
-                if (last.type === type && last.text === text && moremsg === last.moremsg) {
+                if (last.type === type && last.text === text
+                        && moremsg === last.moremsg) {
                     last.restart()
                     return
                 }
@@ -59,17 +65,20 @@ TObject {
 
             initScreenLayout()
             contentComponent.createObject(screenLayout, {
-                                              type:type,
-                                              text:text,
-                                              duration:duration,
-                                              moremsg:moremsg,
+                                              "type": type,
+                                              "text": text,
+                                              "duration": duration,
+                                              "moremsg": moremsg
                                           })
         }
 
-        function createCustom(itemcomponent,duration) {
+        function createCustom(itemcomponent, duration) {
             initScreenLayout()
             if (itemcomponent) {
-                contentComponent.createObject(screenLayout, {itemcomponent:itemcomponent, duration:duration})
+                contentComponent.createObject(screenLayout, {
+                                                  "itemcomponent": itemcomponent,
+                                                  "duration": duration
+                                              })
             }
         }
 
@@ -95,7 +104,7 @@ TObject {
                 }
 
                 onChildrenChanged: {
-                    if (children.length === 0)  {
+                    if (children.length === 0) {
                         destroy()
                     }
                 }
@@ -154,17 +163,16 @@ TObject {
 
                     sourceComponent: itemComponent ? itemComponent : mControl.tMessageSytle
                 }
-
             }
         }
 
         // -- TQuick TMessage style
         property Component tMessageSytle: TRectangle {
             id: rect
-            width: rowlayout.width  + (_super.moremsg ? 25 : 80)
+            width: rowlayout.width + (_super.moremsg ? 25 : 80)
             height: rowlayout.height + 20
             color: {
-                switch(_super.type) {
+                switch (_super.type) {
                     case mControl.const_success:
                     return "#F0F9EB"
                     case mControl.const_warning:
@@ -197,7 +205,7 @@ TObject {
 
                     anchors.verticalCenter: parent.verticalCenter
                     source: {
-                        switch(_super.type) {
+                        switch (_super.type) {
                             case mControl.const_success:
                             return "qrc:/TQuick2/resource/svg/success.svg"
                             case mControl.const_warning:
@@ -214,7 +222,7 @@ TObject {
                     height: more.visible ? 40 : 22
 
                     color: {
-                        switch(_super.type) {
+                        switch (_super.type) {
                             case mControl.const_success:
                             return "#6AC044"
                             case mControl.const_warning:
@@ -267,11 +275,10 @@ TObject {
                 icon.type: TIconType.SVG
                 icon.position: TPosition.Only
                 icon.source: "qrc:/TQuick2/resource/svg/close-px.svg"
-                icon.color:"#ADADAD"
+                icon.color: "#ADADAD"
                 backgroundComponent: null
                 onClicked: _super.close()
             }
-
         }
         //style....end
     }
@@ -282,5 +289,4 @@ TObject {
 
         Component.onCompleted: initialize()
     }
-
 }

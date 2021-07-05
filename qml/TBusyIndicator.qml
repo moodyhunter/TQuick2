@@ -1,4 +1,4 @@
-import QtQuick 2.6
+import QtQuick
 import TQuick2
 
 Item {
@@ -10,7 +10,7 @@ Item {
     readonly property int contentHeight: contentComponentLoader.height
 
     property int padding: 5
-    property int  duration: 500
+    property int duration: 500
 
     property alias icon: mGadgetIcon
     property alias color: mGadgetIcon.color
@@ -64,12 +64,12 @@ Item {
                     ScaleAnimator {
                         from: 1
                         to: 0.2
-                        duration:600
+                        duration: 600
                     }
                     ScaleAnimator {
                         from: 0.2
                         to: 1
-                        duration:600
+                        duration: 600
                     }
                 }
             }

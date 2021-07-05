@@ -1,4 +1,4 @@
-import QtQuick 2.6
+import QtQuick
 import TQuick2
 
 Rectangle {
@@ -18,7 +18,7 @@ Rectangle {
     }
 
     property int padding: 6
-    property int value : 0
+    property int value: 0
     property int max: 0
 
     property alias label: gadgetLabel
@@ -36,7 +36,6 @@ Rectangle {
         text: gadgetLabel.text
         color: gadgetLabel.color
         font: gadgetLabel.font
-
     }
 
     TGadgetLabel {

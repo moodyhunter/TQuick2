@@ -1,4 +1,4 @@
-import QtQuick 2.6
+import QtQuick
 import TQuick2
 
 MouseArea {
@@ -43,7 +43,8 @@ MouseArea {
             checked = !checked
             setState(checked ? TStateType.Checked : TStateType.Normal)
         } else {
-            setState(hoverEnabled && containsMouse ? TStateType.Hover : TStateType.Normal)
+            setState(hoverEnabled
+                     && containsMouse ? TStateType.Hover : TStateType.Normal)
         }
     }
 
@@ -56,7 +57,7 @@ MouseArea {
     }
 
     function statetoString(value) {
-        switch(value) {
+        switch (value) {
         case TStateType.Normal:
             return ""
         case TStateType.Hover:
@@ -68,5 +69,4 @@ MouseArea {
         }
         return ""
     }
-
 }

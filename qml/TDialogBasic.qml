@@ -1,11 +1,11 @@
-import QtQuick 2.6
+import QtQuick
 import TQuick2
 
 TObject {
     id: tDialogBasic
 
-    signal opened()
-    signal closed()
+    signal opened
+    signal closed
 
     property bool modalclose: true
 

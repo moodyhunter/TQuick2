@@ -1,4 +1,4 @@
-import QtQuick 2.6
+import QtQuick
 import TQuick2
 
 Item {
@@ -54,7 +54,7 @@ Item {
         pathItemCount: tCarousel.pathItemCount
         cacheItemCount: model.count
         highlightRangeMode: PathView.StrictlyEnforceRange
-        model: ListModel{}
+        model: ListModel {}
 
         delegate: Loader {
             //可供contentComponent 使用
@@ -71,7 +71,7 @@ Item {
             sourceComponent: contentComponent
         }
 
-        path:Path {
+        path: Path {
             startX: margen
             startY: tCarousel.height / 2
             PathAttribute {

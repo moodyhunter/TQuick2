@@ -184,7 +184,7 @@ void TThemeBinder::initialize()
         QMetaProperty metaProperty = pMetaObj->property(i);
         if (!d->m_listPropertyInitfilter.contains(metaProperty.name()) && !d->m_listFilterPropertyName.contains(metaProperty.name()))
         {
-            QVariant property(metaProperty.type());
+            QVariant property(metaProperty.metaType());
             property.setValue(this->property(metaProperty.name()));
             d->m_mapBindingNameToProperty.insert(metaProperty.name(), property);
             //            qDebug() << "metaProperty=" << metaProperty.name() << " ,
@@ -564,7 +564,7 @@ void TThemeBinder::onRefreshPropertys()
         }
         else
         {
-            QVariant result(mapIter.value().type());
+            QVariant result(mapIter.value().metaType());
             result.setValue(d->getPropertyData(mapIter.key()));
             if (result.isValid())
             {
@@ -583,7 +583,7 @@ void TThemeBinder::onPropertyChanged()
     {
         QString strBindingName = QString(strMethodName.mid(0, strMethodName.indexOf("Changed")));
 
-        QVariant result(this->property(strBindingName.toStdString().c_str()).type());
+        QVariant result(this->property(strBindingName.toStdString().c_str()).metaType());
         QVariant change(this->property(strBindingName.toStdString().c_str()));
 
         if (TThemeManager::getInstance()->isCurrentThemeValid())

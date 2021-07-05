@@ -1,5 +1,5 @@
-import QtQuick 2.6
-import QtQml 2.2
+import QtQuick
+import QtQml
 import TQuick2
 
 Text {
@@ -8,7 +8,7 @@ Text {
 
     property alias theme: tLabelTheme
 
-    TObject{
+    TObject {
         id: tWrapperFont
 
         property alias bold: tLabel.font.bold

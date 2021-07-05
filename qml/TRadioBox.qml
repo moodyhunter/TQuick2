@@ -1,5 +1,6 @@
-import QtQuick 2.6
+import QtQuick
 import TQuick2
+
 
 /* 单选框
     在一组备选项中进行单选 (需要放入 TRadioBoxGroup)
@@ -38,7 +39,7 @@ Item {
     state: {
         if (!enabled) {
             return "disabled"
-        } else if(checked) {
+        } else if (checked) {
             return "checked"
         }
         return ""
@@ -104,7 +105,8 @@ Item {
         Row {
             id: row
             spacing: tRadioBox.spacing
-            layoutDirection: tRadioBox.iconPosition === TPosition.Left ? Qt.LeftToRight : Qt.RightToLeft
+            layoutDirection: tRadioBox.iconPosition
+                             === TPosition.Left ? Qt.LeftToRight : Qt.RightToLeft
 
             Loader {
                 id: icon

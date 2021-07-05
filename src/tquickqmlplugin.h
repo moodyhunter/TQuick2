@@ -38,7 +38,6 @@ class TQuickQmlPlugin : public QQmlExtensionPlugin
     Q_PLUGIN_METADATA(IID QQmlExtensionInterface_iid)
 
   public:
-    // QQmlExtensionInterface interface
     void registerTypes(const char *pUri) override;
     void initializeEngine(QQmlEngine *pEngine, const char *pUri) override;
 };

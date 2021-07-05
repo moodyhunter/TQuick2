@@ -59,8 +59,8 @@ TQuickWorld::TQuickWorld(QQuickItem *parent) : QQuickItem(parent), d_ptr(new TQu
     static bool bInited = false;
     if (bInited)
     {
-        //        qErrnoWarning("Error:There is only one world :)");
-        //        throw;
+        qErrnoWarning("Error:There is only one world :)");
+        throw;
     }
     else
     {

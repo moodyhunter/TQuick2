@@ -1,10 +1,10 @@
-import QtQuick 2.6
+import QtQuick
 import TQuick2
 
 TDialogBasic {
     id: tDialog
 
-    signal triggered(var button,var item)
+    signal triggered(var button, var item)
 
     property string titleText: "Hello TQuick"
     property string contentText: "This is the default message"
@@ -23,7 +23,7 @@ TDialogBasic {
         id: mPrivate
 
         property var usercontentComponent
-        property list<TDialogButton> default_buttons:[
+        property list<TDialogButton> default_buttons: [
             TDialogButton {
                 lighter: true
                 label.text: "Enter"
@@ -88,7 +88,8 @@ TDialogBasic {
                 }
             }
             Component.onCompleted: {
-                var maxwidth = Math.max(headerloader.width,contentloader.width,footerloader.width)
+                var maxwidth = Math.max(headerloader.width,
+                                        contentloader.width, footerloader.width)
                 headerloader.width = maxwidth
                 contentloader.width = maxwidth
                 footerloader.width = maxwidth
@@ -165,7 +166,8 @@ TDialogBasic {
                     icon.height: modelData.icon.height
                     icon.color: modelData.icon.color
 
-                    onClicked: triggered(modelData, mPrivate.usercontentComponent)
+                    onClicked: triggered(modelData,
+                                         mPrivate.usercontentComponent)
                 }
             }
         }

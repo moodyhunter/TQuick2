@@ -1,4 +1,4 @@
-import QtQuick 2.6
+import QtQuick
 import TQuick2
 
 /*! TODO */
@@ -47,7 +47,7 @@ Item {
         onRotationChanged: mPrivate.frameCounter++
     }
 
-    Loader{
+    Loader {
         id: contentItemLoader
         sourceComponent: contentItem
     }
@@ -58,15 +58,14 @@ Item {
         running: visible
         onTriggered: {
             mPrivate.frameCounterAvg += mPrivate.frameCounter
-            mPrivate.fps = mPrivate.frameCounter/2
+            mPrivate.fps = mPrivate.frameCounter / 2
             mPrivate.counter++
             mPrivate.frameCounter = 0
             if (mPrivate.counter >= 3) {
-                mPrivate.fpsAvg = mPrivate.frameCounterAvg/(2 * mPrivate.counter)
+                mPrivate.fpsAvg = mPrivate.frameCounterAvg / (2 * mPrivate.counter)
                 mPrivate.frameCounterAvg = 0
                 mPrivate.counter = 0
             }
         }
     }
 }
-

@@ -1,9 +1,9 @@
-import QtQuick 2.6
+import QtQuick
 import TQuick2
 
-Item{
+Item {
     id: tCheckBox
-    width: contentLoader.width  + padding
+    width: contentLoader.width + padding
     height: contentLoader.height + padding
 
     property int padding: 20
@@ -23,7 +23,7 @@ Item{
     iconComponent: {
         if (!mIcon.source) {
             return null
-        } else if(mIcon.type === TIconType.Awesome) {
+        } else if (mIcon.type === TIconType.Awesome) {
             return awesomeiconComponent
         }
         return svgComponent
@@ -44,7 +44,7 @@ Item{
         color: mBackground.color
         visible: mBackground.visible
         radius: mBackground.radius
-        border.color: Qt.darker(tRectangle.color,1.1)
+        border.color: Qt.darker(tRectangle.color, 1.1)
 
         theme.parent: tCheckBoxTheme
         theme.childName: "background"
@@ -99,7 +99,8 @@ Item{
         Row {
             id: row
             spacing: tCheckBox.spacing
-            layoutDirection: tCheckBox.icon.position === TPosition.Left ? Qt.LeftToRight : Qt.RightToLeft
+            layoutDirection: tCheckBox.icon.position
+                             === TPosition.Left ? Qt.LeftToRight : Qt.RightToLeft
 
             Loader {
                 id: icon
@@ -145,7 +146,6 @@ Item{
             height: !checked ? mIcon.height : mIconChecked.height
         }
     }
-
 
     TThemeBinder {
         id: tCheckBoxTheme
