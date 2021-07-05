@@ -20,16 +20,13 @@ jobs:
       with:
         toolset: 14.2
         arch: x64
-    - id: cache
-      uses: actions/cache@v1
-      with:
-        path: ../Qt
-        key: cache_key
+
     - uses: jurplel/install-qt-action@v2
       with:
-        version: 6.1.0
+        version: 6.2.0
         arch: win64_msvc2019_64
-        cached: ${{steps.cache.outputs.cache-hit}}
+        aqtversion: ==1.2.2
+
     - name: Configure CMake
       run: cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
 
