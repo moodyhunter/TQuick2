@@ -120,6 +120,7 @@ qt6_add_qml_module(TQuick2
     )
 
 target_sources(TQuickPlugin PRIVATE src/tquickqmlplugin.cpp src/tquickqmlplugin.h)
+target_link_directories(TQuickPlugin PUBLIC TQuick2)
 
 install(TARGETS TQuick2 COMPONENT development)
 
