@@ -37,6 +37,7 @@
 
 class TQuickWorld;
 class TQuickPrivate;
+#pragma message("TODO export this")
 class TQuick : public QObject
 {
     Q_OBJECT
